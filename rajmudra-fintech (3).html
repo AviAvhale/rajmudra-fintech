@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rajmudra Fintech – Forex Trading Mastery</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --black: #080808;
+    --deep: #0e0e0e;
+    --card: #131313;
+    --border: #232323;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --gold-pale: #f5e5b0;
+    --silver: #b8b8c8;
+    --white: #f0ede8;
+    --muted: #888880;
+    --accent-red: #c0392b;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+
+  /* ─── DECORATIVE LINES ─────────────────────────── */
+  .gold-line {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+  .gold-line-left {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  /* ─── HEADER / HERO ────────────────────────────── */
+  header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 100%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 50% 40% at 20% 20%, rgba(201,168,76,0.04) 0%, transparent 60%),
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 79px,
+        rgba(201,168,76,0.025) 79px,
+        rgba(201,168,76,0.025) 80px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 79px,
+        rgba(201,168,76,0.025) 79px,
+        rgba(201,168,76,0.025) 80px
+      );
+    z-index: 0;
+  }
+
+  /* Diagonal accent lines */
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    border: 1px solid rgba(201,168,76,0.08);
+    transform: rotate(15deg);
+    pointer-events: none;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(201,168,76,0.06);
+    transform: rotate(-20deg);
+    pointer-events: none;
+  }
+
+  .header-content { position: relative; z-index: 1; max-width: 860px; padding-bottom: 80px; }
+
+  .logo-wrap {
+    margin-bottom: 48px;
+    animation: fadeDown 0.9s ease both;
+  }
+  .logo-wrap img {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(201,168,76,0.3));
+  }
+
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    animation: fadeDown 0.9s 0.1s ease both;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 7vw, 82px);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 12px;
+    animation: fadeDown 0.9s 0.2s ease both;
+  }
+  h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--silver);
+    margin: 20px 0 40px;
+    animation: fadeDown 0.9s 0.3s ease both;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeDown 0.9s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+    color: #080808;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  }
+  .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(201,168,76,0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 15px 36px;
+    border: 1px solid rgba(201,168,76,0.5);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .btn-outline:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.07);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeDown 1s 0.7s ease both;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 2s infinite;
+  }
+
+  /* ─── SECTION BASE ─────────────────────────────── */
+  section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
+
+  .section-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  h2 em { font-style: italic; color: var(--gold); }
+
+  .lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--silver);
+    max-width: 600px;
+    line-height: 1.8;
+  }
+
+  /* ─── FULL-WIDTH DIVIDER ───────────────────────── */
+  .full-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), var(--gold), var(--border), transparent);
+    margin: 0;
+  }
+
+  /* ─── STATS BAR ────────────────────────────────── */
+  .stats-bar {
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat-item {
+    text-align: center;
+    padding: 0 20px;
+    border-right: 1px solid var(--border);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ─── HIGHLIGHTS ───────────────────────────────── */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 60px;
+  }
+
+  .highlight-card {
+    background: var(--deep);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .highlight-card:hover { background: var(--card); }
+  .highlight-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.4s ease;
+  }
+  .highlight-card:hover::before { height: 100%; }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    color: var(--gold);
+  }
+
+  .card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: rgba(201,168,76,0.07);
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    line-height: 1;
+  }
+
+  .highlight-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .highlight-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* ─── SYLLABUS ─────────────────────────────────── */
+  .syllabus-section {
+    background: var(--deep);
+    padding: 100px 0;
+  }
+  .syllabus-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+  .syllabus-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .phase-list { display: flex; flex-direction: column; gap: 0; }
+
+  .phase-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .phase-item:hover { background: rgba(201,168,76,0.03); }
+  .phase-item:hover .phase-num { color: var(--gold-light); }
+
+  .phase-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    padding: 32px 0;
+    border-right: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    padding-right: 24px;
+    transition: color 0.3s;
+  }
+
+  .phase-content { padding: 28px 0 28px 28px; }
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+  .phase-topics {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .phase-topics span {
+    display: inline-block;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.15);
+    color: var(--gold);
+    font-size: 10px;
+    padding: 3px 10px;
+    margin: 3px 3px 0 0;
+    letter-spacing: 0.5px;
+  }
+
+  .syllabus-aside { position: sticky; top: 40px; }
+  .aside-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .aside-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+  }
+  .aside-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+  .aside-card .sub {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .aside-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .aside-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--silver);
+    line-height: 1.6;
+  }
+  .aside-list li::before {
+    content: '◆';
+    color: var(--gold);
+    font-size: 7px;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+  .aside-divider { height: 1px; background: var(--border); margin: 28px 0; }
+
+  /* ─── CONTACT ──────────────────────────────────── */
+  .contact-section {
+    background: var(--card);
+    padding: 100px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .contact-inner { max-width: 1100px; margin: 0 auto; }
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+    align-items: start;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+  }
+  .contact-icon svg { width: 18px; height: 18px; }
+  .contact-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .contact-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .contact-val a { color: var(--white); text-decoration: none; transition: color 0.2s; }
+  .contact-val a:hover { color: var(--gold); }
+
+  .contact-right {
+    padding: 40px;
+    background: var(--deep);
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .contact-right::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .contact-right h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+  .contact-right p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 28px;
+  }
+
+  .tag-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--silver);
+    border-left: 2px solid var(--gold);
+    padding-left: 16px;
+    margin: 24px 0;
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ───────────────────────────────────── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  .footer-logo img {
+    height: 40px;
+    filter: brightness(0.7);
+  }
+  .footer-copy {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+  }
+  .footer-reg {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-align: right;
+  }
+
+  /* ─── ANIMATIONS ───────────────────────────────── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* ─── REGISTRATION FORM ────────────────────────── */
+  .form-section {
+    background: var(--black);
+    padding: 100px 40px;
+    position: relative;
+  }
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .form-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .form-frame-outer {
+    position: relative;
+    margin-top: 48px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--gold), rgba(201,168,76,0.2) 50%, var(--gold-light));
+  }
+  .form-frame-inner {
+    background: #fff;
+    overflow: hidden;
+  }
+  .form-frame-inner iframe {
+    display: block;
+    width: 100%;
+  }
+  /* Gold corner accents */
+  .form-corner {
+    position: absolute;
+    width: 18px; height: 18px;
+    z-index: 2;
+  }
+  .form-corner-tl { top: -1px; left: -1px; border-top: 2px solid var(--gold-light); border-left: 2px solid var(--gold-light); }
+  .form-corner-tr { top: -1px; right: -1px; border-top: 2px solid var(--gold-light); border-right: 2px solid var(--gold-light); }
+  .form-corner-bl { bottom: -1px; left: -1px; border-bottom: 2px solid var(--gold-light); border-left: 2px solid var(--gold-light); }
+  .form-corner-br { bottom: -1px; right: -1px; border-bottom: 2px solid var(--gold-light); border-right: 2px solid var(--gold-light); }
+
+  .form-fallback {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .form-fallback a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .form-fallback a:hover { color: var(--gold-light); }
+
+  /* ─── PRINT STYLES ─────────────────────────────── */
+  @media print {
+    @page {
+      size: A4;
+      margin: 15mm 12mm;
+    }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    body { background: #080808 !important; font-size: 11px; }
+    .print-btn { display: none !important; }
+    .scroll-hint { display: none !important; }
+
+    header { min-height: auto; padding: 40px 30px; page-break-after: avoid; }
+    section { padding: 50px 30px; }
+
+    .stats-bar { page-break-inside: avoid; }
+    .highlights-grid { page-break-inside: avoid; grid-template-columns: repeat(3, 1fr); }
+    .syllabus-layout { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .live-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .contact-layout { grid-template-columns: 1fr 1fr; gap: 40px; }
+
+    .highlight-card { page-break-inside: avoid; }
+    .phase-item { page-break-inside: avoid; }
+    .live-day { page-break-inside: avoid; }
+
+    h1 { font-size: 48px !important; }
+    h2 { font-size: 28px !important; }
+  }
+
+  /* ─── RESPONSIVE ───────────────────────────────── */
+  @media (max-width: 768px) {
+    section { padding: 60px 20px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); padding: 32px 20px; }
+    .stat-item:nth-child(2) { border-right: none; }
+    .highlights-grid { grid-template-columns: 1fr; }
+    .syllabus-layout { grid-template-columns: 1fr; gap: 40px; }
+    .live-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; }
+    .print-btn { bottom: 16px; right: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PRINT BUTTON -->
+
+
+<!-- ═══════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<header>
+  <div class="hero-bg"></div>
+  <div class="header-content">
+    <div class="logo-wrap">
+      <img src="data:image/jpeg;base64,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" alt="Rajmudra Fintech">
+    </div>
+    <p class="eyebrow">Presents · Professional Forex Mastery</p>
+    <h1>Trade with the<br><em>Precision of</em><br>Institutions</h1>
+    <p class="hero-sub">From first candle to live market execution — a complete transformation.</p>
+    <div class="hero-cta">
+      <a href="#syllabus" class="btn-primary">Explore the Programme</a>
+      <a href="#contact" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll to explore</div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">5</span>
+    <span class="stat-label">Structured Phases</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">4</span>
+    <span class="stat-label">Days Live Trading</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">100%</span>
+    <span class="stat-label">Dedication Required</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">∞</span>
+    <span class="stat-label">Trade Audit Support</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HIGHLIGHTS
+════════════════════════════════════════════════ -->
+<section id="highlights">
+  <div class="section-tag">What Sets Us Apart</div>
+  <h2>The <em>Rajmudra</em> Difference</h2>
+  <p class="lead">We built this programme for those who are genuinely committed. Not for the curious — for the dedicated.</p>
+
+  <div class="highlights-grid">
+
+    <div class="highlight-card">
+      <span class="card-num">01</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <h3>For the Dedicated Only</h3>
+      <p>This course demands 100% commitment. Designed exclusively for traders serious about results — not casual learners.</p>
+    </div>
+
+    <div class="highlight-card">
+      <span class="card-num">02</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+      <h3>Complete Roadmap</h3>
+      <p>A seamless journey from basic fundamentals all the way to advanced institutional strategies. No gaps, no guesswork.</p>
+    </div>
+
+    <div class="highlight-card">
+      <span class="card-num">03</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <h3>4-Day Live Trading</h3>
+      <p>We don't just talk — we execute together in real-time markets. Real money, real decisions, real lessons.</p>
+    </div>
+
+    <div class="highlight-card">
+      <span class="card-num">04</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <h3>The Power of Three</h3>
+      <p>We <strong>Educate</strong>, we <strong>Practice</strong>, and we <strong>Trade</strong> live. Three pillars. One complete trader.</p>
+    </div>
+
+    <div class="highlight-card">
+      <span class="card-num">05</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <h3>Active Hand-Holding</h3>
+      <p>Continuous guidance throughout your learning journey. You are never alone in navigating the markets.</p>
+    </div>
+
+    <div class="highlight-card">
+      <span class="card-num">06</span>
+      <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      <h3>Trade Auditing</h3>
+      <p>We review and refine your actual trades after the course. Mistakes become lessons. Lessons become profits.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ═══════════════════════════════════════════════
+     SYLLABUS
+════════════════════════════════════════════════ -->
+<div class="syllabus-section" id="syllabus">
+  <div class="syllabus-inner">
+    <div class="section-tag">Programme Structure</div>
+    <h2>Course <em>Syllabus</em></h2>
+    <p class="lead">Five carefully designed phases that build upon each other — creating a complete, professional trader.</p>
+
+    <div class="syllabus-layout">
+      <!-- Phases -->
+      <div class="phase-list">
+        <div class="phase-item">
+          <div class="phase-num">01</div>
+          <div class="phase-content">
+            <div class="phase-title">The Foundation</div>
+            <div class="phase-topics">
+              <span>Forex Basics</span>
+              <span>Currency Pairs</span>
+              <span>Pips & Lots</span>
+              <span>Leverage</span>
+              <span>Platform Setup</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-num">02</div>
+          <div class="phase-content">
+            <div class="phase-title">Technical Analysis</div>
+            <div class="phase-topics">
+              <span>Candlestick Mastery</span>
+              <span>Support & Resistance</span>
+              <span>Trendlines</span>
+              <span>Price Action</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-num">03</div>
+          <div class="phase-content">
+            <div class="phase-title">Advanced Strategy — The Edge</div>
+            <div class="phase-topics">
+              <span>Smart Money Concepts</span>
+              <span>Market Structure</span>
+              <span>Supply & Demand</span>
+              <span>Institutional Flow</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-num">04</div>
+          <div class="phase-content">
+            <div class="phase-title">Risk Management</div>
+            <div class="phase-topics">
+              <span>Position Sizing</span>
+              <span>Risk-to-Reward</span>
+              <span>Capital Preservation</span>
+              <span>Trade Psychology</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase-item">
+          <div class="phase-num">05</div>
+          <div class="phase-content">
+            <div class="phase-title">Execution & Audit</div>
+            <div class="phase-topics">
+              <span>4 Days Live Trading</span>
+              <span>Entry / Exit Psychology</span>
+              <span>Trade Review</span>
+              <span>Ongoing Audit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aside -->
+      <div class="syllabus-aside">
+        <div class="aside-card">
+          <h3>Who Is This For?</h3>
+          <p class="sub">Admission Criteria</p>
+          <ul class="aside-list">
+            <li>Individuals with zero to intermediate market knowledge</li>
+            <li>Those who can dedicate full time during the programme</li>
+            <li>Aspiring full-time or part-time professional traders</li>
+            <li>Anyone tired of losing money without a strategy</li>
+            <li>People serious about making trading a skill — not a gamble</li>
+          </ul>
+          <div class="aside-divider"></div>
+          <p class="tag-line">"We don't just teach you trading. We make you think like an institution."</p>
+          <div class="aside-divider"></div>
+          <p style="font-size:11px; color: var(--muted); line-height: 1.8;">Limited seats are available per batch to ensure <strong style="color:var(--silver)">personalised attention</strong> for every student.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+════════════════════════════════════════════════ -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="section-tag">Enrol Now</div>
+    <h2>Begin Your <em>Journey</em></h2>
+    <p class="lead">Limited seats. Personalised attention. Reach out now to secure your place in the next batch.</p>
+
+    <div class="contact-layout">
+      <!-- Contact Details -->
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 5.55 5.55l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Call / WhatsApp</div>
+            <div class="contact-val">
+              <a href="tel:+917020408147">+91 70204 08147</a>
+            </div>
+            <div class="contact-val" style="margin-top:4px">
+              <a href="tel:+919370473645">+91 93704 73645</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">
+              <a href="mailto:rajmudrafintech@gmail.com">rajmudrafintech@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">WhatsApp DM Keyword</div>
+            <div class="contact-val" style="color:var(--gold); font-family:'Montserrat',sans-serif; font-size:22px; letter-spacing:3px; font-weight:700;">TRADER</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" style="background: linear-gradient(135deg, rgba(131,58,180,0.15), rgba(253,29,29,0.1), rgba(252,176,69,0.15)); border-color: rgba(201,168,76,0.2);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-val">
+              <a href="https://www.instagram.com/rajmudrafintech/" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px;">
+                @rajmudrafintech
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5;"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card -->
+      <div class="contact-right">
+        <h3>Ready to Transform<br>Your Trading?</h3>
+        <p>Send us a WhatsApp message with the keyword <strong style="color:var(--gold)">TRADER</strong> to receive the full syllabus, batch dates, and pricing details instantly.</p>
+
+        <p class="tag-line">"Stop trading blindly. Start trading strategically. The market rewards preparation — not luck."</p>
+
+        <div style="margin-top: 28px;">
+          <a href="https://wa.me/917020408147?text=TRADER" class="btn-primary" style="display:inline-flex; align-items:center; gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Message TRADER on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     REGISTRATION FORM
+════════════════════════════════════════════════ -->
+<div class="form-section">
+  <div class="form-inner">
+    <div class="section-tag">Register Your Interest</div>
+    <h2>Secure Your <em>Seat</em></h2>
+    <p class="lead">Limited seats per batch. Fill in the form below to reserve your spot and we'll reach out within 24 hours.</p>
+
+    <div class="form-frame-outer">
+      <div class="form-corner form-corner-tl"></div>
+      <div class="form-corner form-corner-tr"></div>
+      <div class="form-corner form-corner-bl"></div>
+      <div class="form-corner form-corner-br"></div>
+      <div class="form-frame-inner">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfMqAC0SF3wXlgEuzBNYZCvXmVy3UVcxAeU2MvzVYqOdb2lww/viewform?embedded=true"
+          width="100%"
+          height="1159"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >Loading…</iframe>
+      </div>
+    </div>
+
+    <!-- Fallback button if iframe blocked -->
+    <p class="form-fallback">
+      Form not loading?
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfMqAC0SF3wXlgEuzBNYZCvXmVy3UVcxAeU2MvzVYqOdb2lww/viewform" target="_blank" rel="noopener noreferrer">Open in new tab →</a>
+    </p>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">
+    <img src="data:image/jpeg;base64,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" alt="Rajmudra Fintech">
+  </div>
+  <div class="footer-copy">
+    © 2025 Rajmudra Fintech · All Rights Reserved
+  </div>
+  <div class="footer-reg">
+    <a href="https://www.instagram.com/rajmudrafintech/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:7px;color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:1px;margin-bottom:6px;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @rajmudrafintech
+    </a><br>
+    rajmudrafintech@gmail.com<br>
+    +91 70204 08147
+  </div>
+</footer>
+
+</body>
+</html>
